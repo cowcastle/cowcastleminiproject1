@@ -20,7 +20,7 @@
   + 지각한 사람 체크
 
 + ### 개발환경 및 언어
-  Linux, Github, MarkDown 언어, C 언어, Git 
+  + Linux, Github, MarkDown 언어, C 언어, Git 
 
 + ### 팀소개 및 팀원이 맡은 역할
   + 팀원 빈지성 : 깃헙 관리, 프로그램 코드 개발, 출퇴근 관련 정보 수집
