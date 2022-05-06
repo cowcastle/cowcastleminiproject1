@@ -16,3 +16,7 @@ int addPrivacy(Privacy *s){
 
     return 1;
 }
+int delete_Privacy(Privacy *s){
+    s->age = -1;//나이가 음수인 거는 말이 되지 않음
+  return 1;
+}
