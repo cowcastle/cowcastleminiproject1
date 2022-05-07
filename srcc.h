@@ -28,3 +28,4 @@ void expressWrong(Privacy *s);//9번째 출근하고 퇴근 잘못 찍었을 때
 int checkLate(Privacy *s);//10번째 지각한 사람 체크 함수
 void currentTime();//11번째 현재 시간을 알려주고 기록하는 함수
 int askIndex(Privacy *s,int count); //12번째 사람을 선택하는 함수
+int checkMasterkey();//15번째 사람의 정보 추가,삭제,수정,읽는 것을 암호가 맞을 때 실행을 할건데 그 암호를 설정하는 것
