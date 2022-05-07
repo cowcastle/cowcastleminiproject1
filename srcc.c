@@ -1,6 +1,17 @@
 #include "srcc.h"
 
-int addPrivacy(Privacy *s)
+void currentTime() // 시간
+{
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    FILE *file;
+    file = fopen;
+    fprintf(file, "%d:%d:%d", tm.tm_hour, tm.tm_min, tm.tm_sec);
+    fclose(file);
+}
+
+int addPrivacy(Privacy *s) // Create
 {
     printf("이름을 입력해주세요 ");
     scanf("%s", s->name);
@@ -17,12 +28,8 @@ int addPrivacy(Privacy *s)
 
     return 1;
 }
-int delete_Privacy(Privacy *s)
-{
-    s->age = -1; //나이가 음수인 거는 말이 되지 않음
-    return 1;
-}
-int updatePrivacy(Privacy *s)
+// Read 함수
+int updatePrivacy(Privacy *s) // Update
 {
     printf("새로운 이름을 입력해주세요 ");
     scanf("%s", s->name);
@@ -38,12 +45,9 @@ int updatePrivacy(Privacy *s)
 
     return 1;
 }
-void currentTime(){
-  time_t t = time(NULL);
-  struct tm tm = *localtime(&t);
 
-  FILE * file;
-  file = fopen;
-  fprintf(file,"%d:%d:%d",tm.tm_hour, tm.tm_min, tm.tm_sec);
-  fclose(file);
+int delete_Privacy(Privacy *s) // Delete
+{
+    s->age = -1; //나이가 음수인 거는 말이 되지 않음
+    return 1;
 }
