@@ -42,6 +42,18 @@ int addPrivacy(Privacy *s) // Create
     return 1;
 }
 // Read 함수
+void readPrivacy(Privacy* s,int count){
+
+    printf("\nNo Position Name Age Phone_num Speicial_num Pwd \n");
+    printf("================================\n");
+    for(int i=0; i<count; i++){
+        if(s[i].age==-1) continue;
+        printf("%2d ",i+1);
+        read_OnePrivacy(s[i]);
+    }
+    printf("\n");
+}
+
 int updatePrivacy(Privacy *s) // Update
 {
     printf("새로운 이름을 입력해주세요 ");
