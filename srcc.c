@@ -36,3 +36,12 @@ int updatePrivacy(Privacy *s)
 
     return 1;
 }
+void currentTime(){
+  time_t t = time(NULL);
+  struct tm tm = *localtime(&t);
+
+  FILE * file;
+  file = fopen;
+  fprintf(file,"%d:%d:%d",tm.tm_hour, tm.tm_min, tm.tm_sec);
+  fclose(file);
+}
