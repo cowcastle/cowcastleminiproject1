@@ -1,5 +1,18 @@
 #include "srcc.h"
 
+int selectMenu(){
+    int menu;
+    printf("\n*** 출근 관련 메뉴 ***\n");
+    printf("1. 인원 조회\n");
+    printf("2. 인원 추가\n");
+    printf("3. 인원 수정\n");
+    printf("4. 인원 삭제\n");
+    printf("0. 종료\n\n");
+    printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+    return menu;
+}
+
 void currentTime() // 시간
 {
     time_t t = time(NULL);
