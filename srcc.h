@@ -24,5 +24,5 @@ void checkCommute(Privacy *s);//7번째 출퇴근 인증하는 함수
 void readPrivacy(Privacy *s);//8번째 출퇴근 기록보는 함수
 void expressWrong(Privacy *s);//9번째 출근하고 퇴근 잘못 찍었을 때 표현해주는 함수
 int checkLate(Privacy *s);//10번째 지각한 사람 체크 함수
-void currentTime(Privacy *s);//11번째 현재 시간을 알려주고 기록하는 함수
+void currentTime();//11번째 현재 시간을 알려주고 기록하는 함수
 int askIndex(Privacy *s,int count); //12번째 사람을 선택하는 함수
