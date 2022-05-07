@@ -78,3 +78,12 @@ int delete_Privacy(Privacy *s) // Delete
     s->age = -1; //나이가 음수인 거는 말이 되지 않음
     return 1;
 }
+
+int askIndex(Privacy *s,int count){
+    int answer;
+
+    readPrivacy(s,count);
+    printf("번호는 (취소 :0)? ");
+    scanf("%d",&answer);
+    return answer;
+}
