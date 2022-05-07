@@ -53,7 +53,9 @@ void readPrivacy(Privacy* s,int count){
     }
     printf("\n");
 }
-
+void read_OnePrivacy(Privacy s){
+        printf("%2s %5s %3d %12s %7d %20s\n",s.position,s.name,s.age,s.phone_num,s.special_num,s.pwd);
+}
 int updatePrivacy(Privacy *s) // Update
 {
     printf("새로운 이름을 입력해주세요 ");
