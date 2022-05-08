@@ -1,6 +1,6 @@
 #include "srcc.h"
 
-char masterkey[30]={"1234"};
+char masterkey[30]={"1234 abcd!"};
 
 int checkMasterkey(){
     char temp_mk[30];

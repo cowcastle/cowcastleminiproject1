@@ -23,7 +23,6 @@ int main(void){
             int answer = askIndex(s,index);
             if(answer!=0){
                 updatePrivacy(&s[answer-1]);//answer-1을 하는 이유 index가 0부터 시작하기 때문
-                printf("=> 수정성공!\n");
             }
             else{
                 printf("수정할 수 없습니다.\n");
