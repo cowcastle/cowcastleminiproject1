@@ -9,8 +9,6 @@ int checkMasterkey(){
     fgets(temp_mk,30,stdin);
     temp_mk[strlen(temp_mk) - 1] = '\0';
 
-    //printf("[%s] [%s]",masterkey,temp_mk);
-
     int temp = strcmp(masterkey,temp_mk);
 
     if(temp==0) return 1;
