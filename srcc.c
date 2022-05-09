@@ -1,34 +1,38 @@
 #include "srcc.h"
 
-char masterkey[30]={"1234 abcd!"};
+char masterkey[30] = {"1234 abcd!"};
 
-int checkMasterkey(){
+int checkMasterkey()
+{
     char temp_mk[30];
-    printf("ê³„ì† í•˜ì‹¤ë ¤ë©´ masterkeyë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”!!\n");
+    printf("°è¼ÓÇÏ½Ã·Á¸é Masterkey¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>\n");
     getchar();
-    fgets(temp_mk,30,stdin);
+    fgets(temp_mk, 30, stdin);
     temp_mk[strlen(temp_mk) - 1] = '\0';
 
-    int temp = strcmp(masterkey,temp_mk);
+    int temp = strcmp(masterkey, temp_mk);
 
-    if(temp==0) return 1;
-    else return 0;
+    if (temp == 0)
+        return 1;
+    else
+        return 0;
 }
 
-int selectMenu(){
+int selectMenu()
+{
     int menu;
-    printf("\n*** ì¶œê·¼ ê´€ë ¨ ë©”ë‰´ ***\n");
-    printf("1. ì¸ì› ì¡°íšŒ\n");
-    printf("2. ì¸ì› ì¶”ê°€\n");
-    printf("3. ì¸ì› ìˆ˜ì •\n");
-    printf("4. ì¸ì› ì‚­ì œ\n");
-    printf("0. ì¢…ë£Œ\n\n");
-    printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
+    printf("\n***** Ãâ±Ù °ü·Ã ¸Ş´º *****\n");
+    printf("1. ÀÎ¿ø Á¶È¸ \n");
+    printf("2. ÀÎ¿ø Ãß°¡ \n");
+    printf("3. ÀÎ¿ø ¼öÁ¤ \n");
+    printf("4. ÀÎ¿ø »èÁ¦ \n");
+    printf("0. Á¾·á \n\n");
+    printf("=> ¸Ş´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä. ");
     scanf("%d", &menu);
     return menu;
 }
 
-/*void currentTime() // ì‹œê°„
+/*void currentTime() // ½Ã°£
 {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
@@ -40,96 +44,107 @@ int selectMenu(){
 }
 */
 int addPrivacy(Privacy *s) // Create
-{   
- 
+{
+
     int temp = checkMasterkey();
 
-    if(temp==1){
-    printf("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” ");
-    scanf("%s", s->name);
-    printf("ë‚˜ì´ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
-    scanf("%d", &s->age);
-    printf("ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
-    scanf("%s", s->phone_num);
-    printf("ì§ì±…ì„ ì…ë ¥í•´ì£¼ì„¸ìš” ");
-    scanf("%s", s->position);
-    printf("ê³ ìœ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
-    scanf("%d", &s->special_num);
-    printf("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
-    scanf("%s", s->pwd);
+    if (temp == 1)
+    {
+        printf("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
+        scanf("%s", s->name);
+        printf("³ªÀÌ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
+        scanf("%d", &s->age);
+        printf("ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
+        scanf("%s", s->phone_num);
+        printf("Á÷Ã¥À» ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
+        scanf("%s", s->position);
+        printf("°íÀ¯¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
+        scanf("%d", &s->special_num);
+        printf("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
+        scanf("%s", s->pwd);
 
-    return 1;
+        return 1;
     }
-    else {
-        printf("\nmasterkeyê°€ ì•„ë‹™ë‹ˆë‹¤!!\n");
+    else
+    {
+        printf("\nMasterkey °¡ ¾Æ´Õ´Ï´Ù!!\n");
         return 0;
     }
 }
-// Read í•¨ìˆ˜
-void readPrivacy(Privacy* s,int count){
+// Read ÇÔ¼ö
+void readPrivacy(Privacy *s, int count)
+{
     int temp = checkMasterkey();
-    if(temp==1){
-    printf("\nNo Position Name Age Phone_num Speicial_num Pwd \n");
-    printf("================================\n");
-    for(int i=0; i<count; i++){
-        if(s[i].age==-1) continue;
-        printf("%2d ",i+1);
-        read_OnePrivacy(s[i]);
+    if (temp == 1)
+    {
+        printf("\nNo Position Name Age  Phone_num    Speicial_num  Pwd \n");
+        printf("====================================================\n");
+        for (int i = 0; i < count; i++)
+        {
+            if (s[i].age == -1)
+                continue;
+            printf("%2d ", i + 1);
+            read_OnePrivacy(s[i]);
+        }
+        printf("\n");
     }
-    printf("\n");
-    }
-    else{
-        printf("\nmasterkeyê°€ ì•„ë‹™ë‹ˆë‹¤!!\n");
+    else
+    {
+        printf("\nMasterkey°¡ ¾Æ´Õ´Ï´Ù!!\n");
     }
 }
-void read_OnePrivacy(Privacy s){
-        printf("%2s %5s %3d %12s %7d %20s\n",s.position,s.name,s.age,s.phone_num,s.special_num,s.pwd);
+void read_OnePrivacy(Privacy s)
+{
+    printf("%4s %6s %4d %10s %8d %10s\n", s.position, s.name, s.age, s.phone_num, s.special_num, s.pwd);
 }
 int updatePrivacy(Privacy *s) // Update
 {
     int temp = checkMasterkey();
 
-    if(temp==1){
-        printf("ìƒˆë¡œìš´ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” ");
+    if (temp == 1)
+    {
+        printf("»õ·Î¿î ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
         scanf("%s", s->name);
-        printf("ìƒˆë¡œìš´ ë‚˜ì´ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
+        printf("»õ·Î¿î ³ªÀÌ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
         scanf("%d", &s->age);
-        printf("ìƒˆë¡œìš´ ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
+        printf("»õ·Î¿î ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
         scanf("%s", s->phone_num);
-        printf("ìƒˆë¡œìš´ ì§ì±…ì„ ì…ë ¥í•´ì£¼ì„¸ìš” ");
+        printf("»õ·Î¿î Á÷Ã¥À» ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
         scanf("%s", s->position);
-        printf("ìƒˆë¡œìš´ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” ");
+        printf("»õ·Î¿î ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä =>");
         scanf("%s", s->pwd);
-        printf("==> ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤ <== \n");
+        printf("==> ¼öÁ¤µÇ¾ú½À´Ï´Ù <== \n");
 
-    return 1;
+        return 1;
     }
-    else{
-        printf("\nmasterkeyê°€ ì•„ë‹™ë‹ˆë‹¤!!\n");
+    else
+    {
+        printf("\nMasterkey°¡ ¾Æ´Õ´Ï´Ù!!\n");
         return 0;
     }
-
 }
 
 int deletePrivacy(Privacy *s) // Delete
-{   
+{
     int temp = checkMasterkey();
-    if(temp == 1){
-        s->age = -1; //ë‚˜ì´ê°€ ìŒìˆ˜ì¸ ê±°ëŠ” ë§ì´ ë˜ì§€ ì•ŠìŒ
+    if (temp == 1)
+    {
+        s->age = -1; //³ªÀÌ°¡ À½¼öÀÎ °Å´Â ¸»ÀÌ µÇÁö ¾ÊÀ½
         return 1;
     }
-    else{
-        printf("\nmasterkeyê°€ ì•„ë‹™ë‹ˆë‹¤!!\n");
+    else
+    {
+        printf("\nMasterkey°¡ ¾Æ´Õ´Ï´Ù!!\n");
         return 0;
     }
-
 }
 
-int askIndex(Privacy *s,int count){
+int askIndex(Privacy *s, int count)
+{
     int answer;
 
-    readPrivacy(s,count);
-    printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ :0)? ");
-    scanf("%d",&answer);
+    readPrivacy(s, count);
+    printf("¹øÈ£´Â (Ãë¼Ò :0)? ");
+    scanf("%d", &answer);
     return answer;
 }
