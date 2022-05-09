@@ -2,30 +2,31 @@
 #include <string.h>
 #include <time.h>
 
-typedef struct {
+typedef struct
+{
     char name[20];
     int age;
-    char position[20];//ì§ì±…
+    char position[20]; //Á÷Ã¥
     char phone_num[20];
-    int special_num;//ê³ ìœ ë²ˆí˜¸
+    int special_num; //°íÀ¯¹øÈ£
     char pwd[30];
-    char fixed_time[20];//ì •í•´ì§„ ì¶œê·¼ ì‹œê°„
-    char arrive_time[20];//ì¶œê·¼ ì‹œê°„
-    char leave_time[20];//í‡´ê·¼ ì‹œê°„
+    char fixed_time[20];  //Á¤ÇØÁø Ãâ±Ù ½Ã°£
+    char arrive_time[20]; //Ãâ±Ù ½Ã°£
+    char leave_time[20];  //Åğ±Ù ½Ã°£
 } Privacy;
- 
-int addPrivacy(Privacy *s);//1ë²ˆì§¸ ì‚¬ëŒ ì •ë³´ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
-void readPrivacy(Privacy *s,int count);//13ë²ˆì§¸ ì‚¬ëŒ ì •ë³´ ë³´ëŠ” í•¨ìˆ˜
-void read_OnePrivacy(Privacy s);//14ë²ˆì§¸ ê° ì‚¬ëŒì˜ ì •ë³´ë¥¼ ë³´ëŠ” í•¨ìˆ˜
-int updatePrivacy(Privacy *s);//3ë²ˆì§¸ ì‚¬ëŒ ì •ë³´ ìˆ˜ì •í•˜ëŠ” í•¨ìˆ˜
-int deletePrivacy(Privacy *s);//2ë²ˆì§¸ ì‚¬ëŒ ì •ë³´ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜
-void saveData(Privacy *s,int count);//4ë²ˆì§¸ íŒŒì¼ ì •ë³´ ì €ì¥ í•¨ìˆ˜
-int loadData(Privacy *s);//5ë²ˆì§¸ íŒŒì¼ì— ìˆëŠ” ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì˜¤ëŠ” í•¨ìˆ˜
-int selectMenu();//6ë²ˆì§¸ ì¶œê·¼ ê´€ë ¨ ì „ì²´ë©”ë‰´
-void checkCommute(Privacy *s);//7ë²ˆì§¸ ì¶œí‡´ê·¼ ì¸ì¦í•˜ëŠ” í•¨ìˆ˜
-void seeTime(Privacy *s);//8ë²ˆì§¸ ì¶œí‡´ê·¼ ê¸°ë¡ë³´ëŠ” í•¨ìˆ˜
-void expressWrong(Privacy *s);//9ë²ˆì§¸ ì¶œê·¼í•˜ê³  í‡´ê·¼ ì˜ëª» ì°ì—ˆì„ ë•Œ í‘œí˜„í•´ì£¼ëŠ” í•¨ìˆ˜
-int checkLate(Privacy *s);//10ë²ˆì§¸ ì§€ê°í•œ ì‚¬ëŒ ì²´í¬ í•¨ìˆ˜
-void currentTime();//11ë²ˆì§¸ í˜„ì¬ ì‹œê°„ì„ ì•Œë ¤ì£¼ê³  ê¸°ë¡í•˜ëŠ” í•¨ìˆ˜
-int askIndex(Privacy *s,int count); //12ë²ˆì§¸ ì‚¬ëŒì„ ì„ íƒí•˜ëŠ” í•¨ìˆ˜
-int checkMasterkey();//15ë²ˆì§¸ ì‚¬ëŒì˜ ì •ë³´ ì¶”ê°€,ì‚­ì œ,ìˆ˜ì •,ì½ëŠ” ê²ƒì„ ì•”í˜¸ê°€ ë§ì„ ë•Œ ì‹¤í–‰ì„ í• ê±´ë° ê·¸ ì•”í˜¸ë¥¼ ì„¤ì •í•˜ëŠ” ê²ƒ
+
+int addPrivacy(Privacy *s);              // 1¹øÂ° »ç¶÷ Á¤º¸ Ãß°¡ÇÏ´Â ÇÔ¼ö
+void readPrivacy(Privacy *s, int count); // 13¹øÂ° »ç¶÷ Á¤º¸ º¸´Â ÇÔ¼ö
+void read_OnePrivacy(Privacy s);         // 14¹øÂ° °¢ »ç¶÷ÀÇ Á¤º¸¸¦ º¸´Â ÇÔ¼ö
+int updatePrivacy(Privacy *s);           // 3¹øÂ° »ç¶÷ Á¤º¸ ¼öÁ¤ÇÏ´Â ÇÔ¼ö
+int deletePrivacy(Privacy *s);           // 2¹øÂ° »ç¶÷ Á¤º¸ »èÁ¦ÇÏ´Â ÇÔ¼ö
+void saveData(Privacy *s, int count);    // 4¹øÂ° ÆÄÀÏ Á¤º¸ ÀúÀå ÇÔ¼ö
+int loadData(Privacy *s);                // 5¹øÂ° ÆÄÀÏ¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ ºÒ·¯¿À´Â ÇÔ¼ö
+int selectMenu();                        // 6¹øÂ° Ãâ±Ù °ü·Ã ÀüÃ¼¸Ş´º
+void checkCommute(Privacy *s);           // 7¹øÂ° ÃâÅğ±Ù ÀÎÁõÇÏ´Â ÇÔ¼ö
+void seeTime(Privacy *s);                // 8¹øÂ° ÃâÅğ±Ù ±â·Ïº¸´Â ÇÔ¼ö
+void expressWrong(Privacy *s);           // 9¹øÂ° Ãâ±ÙÇÏ°í Åğ±Ù Àß¸ø Âï¾úÀ» ¶§ Ç¥ÇöÇØÁÖ´Â ÇÔ¼ö
+int checkLate(Privacy *s);               // 10¹øÂ° Áö°¢ÇÑ »ç¶÷ Ã¼Å© ÇÔ¼ö
+void currentTime();                      // 11¹øÂ° ÇöÀç ½Ã°£À» ¾Ë·ÁÁÖ°í ±â·ÏÇÏ´Â ÇÔ¼ö
+int askIndex(Privacy *s, int count);     // 12¹øÂ° »ç¶÷À» ¼±ÅÃÇÏ´Â ÇÔ¼ö
+int checkMasterkey();                    // 15¹øÂ° »ç¶÷ÀÇ Á¤º¸ Ãß°¡,»èÁ¦,¼öÁ¤,ÀĞ´Â °ÍÀ» ¾ÏÈ£°¡ ¸ÂÀ» ¶§ ½ÇÇàÀ» ÇÒ°Çµ¥ ±× ¾ÏÈ£¸¦ ¼³Á¤ÇÏ´Â °Í
