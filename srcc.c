@@ -32,17 +32,6 @@ int selectMenu()
     return menu;
 }
 
-int currentTime() // �ð�
-{
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
-
-    FILE *file;
-    file = fopen;
-    fprintf(file, "%d:%d:%d", tm.tm_hour, tm.tm_min, tm.tm_sec);
-    fclose(file);
-}
-
 int addPrivacy(Privacy *s) // Create
 {
 
@@ -147,4 +136,53 @@ int askIndex(Privacy *s, int count)
     printf("��ȣ�� (��� :0)? ");
     scanf("%d", &answer);
     return answer;
+}
+
+void checkCommute(Privacy *s, int count){
+    int num=0;//출퇴근 확인
+    int flag=0;//고유번호와 비밀번호를 잘 입력했는지 확인
+    int i=0;//반복문 변수
+    int tmp_special_num;//임시 고유번호 
+    char tmp_pwd[30];//임시 패스워드
+
+    printf("출근이면 1을 입력하고 퇴근이면 2를 입력해주세요!\n");
+    scnaf("%d",&num);
+    if(!(num==1||num==2)){
+        printf("번호를 잘못 누르셨습니다.\n");
+        return ;
+    }
+    printf("고유번호를 입력해주세요!\n");
+    scanf("%d",&tmp_special_num);
+    getchar();
+    printf("비밀번호를 입력해주세요!\n");
+    scanf("%s",tmp_pwd);
+
+    for(; i<count; i++){
+        if(s[i].special_num == tmp_special_num){
+            if(strcmp(s[i].pwd,tmp_pwd)==0){
+                flag =1;//찾았다는 의미
+                break;
+            }
+        }
+    }
+
+    if(flag==1&&num==1){//도착시간을 저장하면 됨
+        time_t t = time(NULL);
+        struct tm tm = *localtime(&t);
+        s[i].arrive_time_hour = tm.tm_hour;
+        s[i].arrive_time_min  = tm.tm_min;
+        s[i].arrive_time_sec = tm.tm_sec;
+        printf("시간을 성공적으로 저장하였습니다\n");
+        return ;
+    }
+    if(flag==1&&num==2){//떠난시간을 저장하면 됨
+        time_t t = time(NULL);
+        struct tm tm = *localtime(&t);
+        s[i].leave_time_hour = tm.tm_hour;
+        s[i].leave_time_min  = tm.tm_min;
+        s[i].leave_time_sec = tm.tm_sec;
+        printf("시간을 성공적으로 저장하였습니다\n");
+        return ;
+    }
+    
 }
