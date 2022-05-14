@@ -5,7 +5,7 @@ char masterkey[30] = {"1234 abcd!"};
 int checkMasterkey()
 {
     char temp_mk[30];
-    printf("����Ͻ÷��� Masterkey�� �Է����ּ��� =>\n");
+    printf("占쏙옙占쏙옙絿첨占쏙옙占� Masterkey占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>\n");
     getchar();
     fgets(temp_mk, 30, stdin);
     temp_mk[strlen(temp_mk) - 1] = '\0';
@@ -21,13 +21,13 @@ int checkMasterkey()
 int selectMenu()
 {
     int menu;
-    printf("\n***** ��� ���� �޴� *****\n");
-    printf("1. �ο� ��ȸ \n");
-    printf("2. �ο� �߰� \n");
-    printf("3. �ο� ���� \n");
-    printf("4. �ο� ���� \n");
-    printf("0. ���� \n\n");
-    printf("=> �޴��� �������ּ���. ");
+    printf("\n***** 占쏙옙占� 占쏙옙占쏙옙 占쌨댐옙 *****\n");
+    printf("1. 占싸울옙 占쏙옙회 \n");
+    printf("2. 占싸울옙 占쌩곤옙 \n");
+    printf("3. 占싸울옙 占쏙옙占쏙옙 \n");
+    printf("4. 占싸울옙 占쏙옙占쏙옙 \n");
+    printf("0. 占쏙옙占쏙옙 \n\n");
+    printf("=> 占쌨댐옙占쏙옙 占쏙옙占쏙옙占쏙옙占쌍쇽옙占쏙옙. ");
     scanf("%d", &menu);
     return menu;
 }
@@ -39,28 +39,28 @@ int addPrivacy(Privacy *s) // Create
 
     if (temp == 1)
     {
-        printf("�̸��� �Է����ּ��� =>");
+        printf("占싱몌옙占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->name);
-        printf("���̸� �Է����ּ��� =>");
+        printf("占쏙옙占싱몌옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%d", &s->age);
-        printf("��ȭ��ȣ�� �Է����ּ��� =>");
+        printf("占쏙옙화占쏙옙호占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->phone_num);
-        printf("��å�� �Է����ּ��� =>");
+        printf("占쏙옙책占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->position);
-        printf("������ȣ�� �Է����ּ��� =>");
+        printf("占쏙옙占쏙옙占쏙옙호占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%d", &s->special_num);
-        printf("��й�ȣ�� �Է����ּ��� =>");
+        printf("占쏙옙橘占싫ｏ옙占� 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->pwd);
 
         return 1;
     }
     else
     {
-        printf("\nMasterkey �� �ƴմϴ�!!\n");
+        printf("\nMasterkey 占쏙옙 占싣닙니댐옙!!\n");
         return 0;
     }
 }
-// Read �Լ�
+// Read 占쌉쇽옙
 void readPrivacy(Privacy *s, int count)
 {
     int temp = checkMasterkey();
@@ -79,7 +79,7 @@ void readPrivacy(Privacy *s, int count)
     }
     else
     {
-        printf("\nMasterkey�� �ƴմϴ�!!\n");
+        printf("\nMasterkey占쏙옙 占싣닙니댐옙!!\n");
     }
 }
 void read_OnePrivacy(Privacy s)
@@ -92,23 +92,23 @@ int updatePrivacy(Privacy *s) // Update
 
     if (temp == 1)
     {
-        printf("���ο� �̸��� �Է����ּ��� =>");
+        printf("占쏙옙占싸울옙 占싱몌옙占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->name);
-        printf("���ο� ���̸� �Է����ּ��� =>");
+        printf("占쏙옙占싸울옙 占쏙옙占싱몌옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%d", &s->age);
-        printf("���ο� ��ȭ��ȣ�� �Է����ּ��� =>");
+        printf("占쏙옙占싸울옙 占쏙옙화占쏙옙호占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->phone_num);
-        printf("���ο� ��å�� �Է����ּ��� =>");
+        printf("占쏙옙占싸울옙 占쏙옙책占쏙옙 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->position);
-        printf("���ο� ��й�ȣ�� �Է����ּ��� =>");
+        printf("占쏙옙占싸울옙 占쏙옙橘占싫ｏ옙占� 占쌉뤄옙占쏙옙占쌍쇽옙占쏙옙 =>");
         scanf("%s", s->pwd);
-        printf("==> �����Ǿ����ϴ� <== \n");
+        printf("==> 占쏙옙占쏙옙占실억옙占쏙옙占싹댐옙 <== \n");
 
         return 1;
     }
     else
     {
-        printf("\nMasterkey�� �ƴմϴ�!!\n");
+        printf("\nMasterkey占쏙옙 占싣닙니댐옙!!\n");
         return 0;
     }
 }
@@ -118,12 +118,12 @@ int deletePrivacy(Privacy *s) // Delete
     int temp = checkMasterkey();
     if (temp == 1)
     {
-        s->age = -1; //���̰� ������ �Ŵ� ���� ���� ����
+        s->age = -1; //占쏙옙占싱곤옙 占쏙옙占쏙옙占쏙옙 占신댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
         return 1;
     }
     else
     {
-        printf("\nMasterkey�� �ƴմϴ�!!\n");
+        printf("\nMasterkey占쏙옙 占싣닙니댐옙!!\n");
         return 0;
     }
 }
@@ -133,56 +133,62 @@ int askIndex(Privacy *s, int count)
     int answer;
 
     readPrivacy(s, count);
-    printf("��ȣ�� (��� :0)? ");
+    printf("占쏙옙호占쏙옙 (占쏙옙占� :0)? ");
     scanf("%d", &answer);
     return answer;
 }
 
-void checkCommute(Privacy *s, int count){
-    int num=0;//출퇴근 확인
-    int flag=0;//고유번호와 비밀번호를 잘 입력했는지 확인
-    int i=0;//반복문 변수
-    int tmp_special_num;//임시 고유번호 
-    char tmp_pwd[30];//임시 패스워드
+void checkCommute(Privacy *s, int count)
+{
+    int num = 0;         //異쒗눜洹� �솗�씤
+    int flag = 0;        //怨좎쑀踰덊샇��� 鍮꾨��踰덊샇瑜� �옒 �엯�젰�뻽�뒗吏� �솗�씤
+    int i = 0;           //諛섎났臾� 蹂��닔
+    int tmp_special_num; //�엫�떆 怨좎쑀踰덊샇
+    char tmp_pwd[30];    //�엫�떆 �뙣�뒪�썙�뱶
 
-    printf("출근이면 1을 입력하고 퇴근이면 2를 입력해주세요!\n");
-    scnaf("%d",&num);
-    if(!(num==1||num==2)){
-        printf("번호를 잘못 누르셨습니다.\n");
-        return ;
+    printf("異쒓렐�씠硫� 1�쓣 �엯�젰�븯怨� �눜洹쇱씠硫� 2瑜� �엯�젰�빐二쇱꽭�슂!\n");
+    scnaf("%d", &num);
+    if (!(num == 1 || num == 2))
+    {
+        printf("踰덊샇瑜� �옒紐� �늻瑜댁뀲�뒿�땲�떎.\n");
+        return;
     }
-    printf("고유번호를 입력해주세요!\n");
-    scanf("%d",&tmp_special_num);
+    printf("怨좎쑀踰덊샇瑜� �엯�젰�빐二쇱꽭�슂!\n");
+    scanf("%d", &tmp_special_num);
     getchar();
-    printf("비밀번호를 입력해주세요!\n");
-    scanf("%s",tmp_pwd);
+    printf("鍮꾨��踰덊샇瑜� �엯�젰�빐二쇱꽭�슂!\n");
+    scanf("%s", tmp_pwd);
 
-    for(; i<count; i++){
-        if(s[i].special_num == tmp_special_num){
-            if(strcmp(s[i].pwd,tmp_pwd)==0){
-                flag =1;//찾았다는 의미
+    for (; i < count; i++)
+    {
+        if (s[i].special_num == tmp_special_num)
+        {
+            if (strcmp(s[i].pwd, tmp_pwd) == 0)
+            {
+                flag = 1; //李얠븯�떎�뒗 �쓽誘�
                 break;
             }
         }
     }
 
-    if(flag==1&&num==1){//도착시간을 저장하면 됨
+    if (flag == 1 && num == 1)
+    { //�룄李⑹떆媛꾩쓣 ����옣�븯硫� �맖
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].arrive_time_hour = tm.tm_hour;
-        s[i].arrive_time_min  = tm.tm_min;
+        s[i].arrive_time_min = tm.tm_min;
         s[i].arrive_time_sec = tm.tm_sec;
-        printf("시간을 성공적으로 저장하였습니다\n");
-        return ;
+        printf("�떆媛꾩쓣 �꽦怨듭쟻�쑝濡� ����옣�븯����뒿�땲�떎\n");
+        return;
     }
-    if(flag==1&&num==2){//떠난시간을 저장하면 됨
+    if (flag == 1 && num == 2)
+    { //�뼚�궃�떆媛꾩쓣 ����옣�븯硫� �맖
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].leave_time_hour = tm.tm_hour;
-        s[i].leave_time_min  = tm.tm_min;
+        s[i].leave_time_min = tm.tm_min;
         s[i].leave_time_sec = tm.tm_sec;
-        printf("시간을 성공적으로 저장하였습니다\n");
-        return ;
+        printf("�떆媛꾩쓣 �꽦怨듭쟻�쑝濡� ����옣�븯����뒿�땲�떎\n");
+        return;
     }
-    
 }
