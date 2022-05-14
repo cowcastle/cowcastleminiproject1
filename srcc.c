@@ -32,7 +32,7 @@ int selectMenu()
     return menu;
 }
 
-void currentTime() // �ð�
+int currentTime() // �ð�
 {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
