@@ -5,7 +5,7 @@ char masterkey[30] = {"1234 abcd!"};
 int checkMasterkey()
 {
     char temp_mk[30];
-    printf("å ì™ì˜™å ì™ì˜™çµ¿ì²¨å ì™ì˜™å ï¿½ Masterkeyå ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>\n");
+    printf("? ?™?˜™? ?™?˜™çµ¿ì²¨? ?™?˜™? ï¿? Masterkey? ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>\n");
     getchar();
     fgets(temp_mk, 30, stdin);
     temp_mk[strlen(temp_mk) - 1] = '\0';
@@ -21,13 +21,13 @@ int checkMasterkey()
 int selectMenu()
 {
     int menu;
-    printf("\n***** å ì™ì˜™å ï¿½ å ì™ì˜™å ì™ì˜™ å ìŒ¨ëŒì˜™ *****\n");
-    printf("1. å ì‹¸ìš¸ì˜™ å ì™ì˜™íšŒ \n");
-    printf("2. å ì‹¸ìš¸ì˜™ å ìŒ©ê³¤ì˜™ \n");
-    printf("3. å ì‹¸ìš¸ì˜™ å ì™ì˜™å ì™ì˜™ \n");
-    printf("4. å ì‹¸ìš¸ì˜™ å ì™ì˜™å ì™ì˜™ \n");
-    printf("0. å ì™ì˜™å ì™ì˜™ \n\n");
-    printf("=> å ìŒ¨ëŒì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™. ");
+    printf("\n***** ? ?™?˜™? ï¿? ? ?™?˜™? ?™?˜™ ? ?Œ¨?Œ?˜™ *****\n");
+    printf("1. ? ?‹¸?š¸?˜™ ? ?™?˜™?šŒ \n");
+    printf("2. ? ?‹¸?š¸?˜™ ? ?Œ©ê³¤ì˜™ \n");
+    printf("3. ? ?‹¸?š¸?˜™ ? ?™?˜™? ?™?˜™ \n");
+    printf("4. ? ?‹¸?š¸?˜™ ? ?™?˜™? ?™?˜™ \n");
+    printf("0. ? ?™?˜™? ?™?˜™ \n\n");
+    printf("=> ? ?Œ¨?Œ?˜™? ?™?˜™ ? ?™?˜™? ?™?˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™. ");
     scanf("%d", &menu);
     return menu;
 }
@@ -39,28 +39,28 @@ int addPrivacy(Privacy *s) // Create
 
     if (temp == 1)
     {
-        printf("å ì‹±ëªŒì˜™å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?‹±ëªŒì˜™? ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->name);
-        printf("å ì™ì˜™å ì‹±ëªŒì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?‹±ëªŒì˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%d", &s->age);
-        printf("å ì™ì˜™í™”å ì™ì˜™í˜¸å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™?™”? ?™?˜™?˜¸? ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->phone_num);
-        printf("å ì™ì˜™ì±…å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™ì±…å ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->position);
-        printf("å ì™ì˜™å ì™ì˜™å ì™ì˜™í˜¸å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?™?˜™? ?™?˜™?˜¸? ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%d", &s->special_num);
-        printf("å ì™ì˜™æ©˜å ì‹«ï½ì˜™å ï¿½ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™æ©˜å ?‹«ï½ì˜™? ï¿? ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->pwd);
 
         return 1;
     }
     else
     {
-        printf("\nMasterkey å ì™ì˜™ å ì‹£ë‹™ë‹ˆëŒì˜™!!\n");
+        printf("\nMasterkey ? ?™?˜™ ? ?‹£?‹™?‹ˆ?Œ?˜™!!\n");
         return 0;
     }
 }
-// Read å ìŒ‰ì‡½ì˜™
+// Read ? ?Œ‰?‡½?˜™
 void readPrivacy(Privacy *s, int count)
 {
     int temp = checkMasterkey();
@@ -79,7 +79,7 @@ void readPrivacy(Privacy *s, int count)
     }
     else
     {
-        printf("\nMasterkeyå ì™ì˜™ å ì‹£ë‹™ë‹ˆëŒì˜™!!\n");
+        printf("\nMasterkey? ?™?˜™ ? ?‹£?‹™?‹ˆ?Œ?˜™!!\n");
     }
 }
 void read_OnePrivacy(Privacy s)
@@ -92,23 +92,23 @@ int updatePrivacy(Privacy *s) // Update
 
     if (temp == 1)
     {
-        printf("å ì™ì˜™å ì‹¸ìš¸ì˜™ å ì‹±ëªŒì˜™å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?‹¸?š¸?˜™ ? ?‹±ëªŒì˜™? ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->name);
-        printf("å ì™ì˜™å ì‹¸ìš¸ì˜™ å ì™ì˜™å ì‹±ëªŒì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?‹¸?š¸?˜™ ? ?™?˜™? ?‹±ëªŒì˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%d", &s->age);
-        printf("å ì™ì˜™å ì‹¸ìš¸ì˜™ å ì™ì˜™í™”å ì™ì˜™í˜¸å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?‹¸?š¸?˜™ ? ?™?˜™?™”? ?™?˜™?˜¸? ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->phone_num);
-        printf("å ì™ì˜™å ì‹¸ìš¸ì˜™ å ì™ì˜™ì±…å ì™ì˜™ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?‹¸?š¸?˜™ ? ?™?˜™ì±…å ?™?˜™ ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->position);
-        printf("å ì™ì˜™å ì‹¸ìš¸ì˜™ å ì™ì˜™æ©˜å ì‹«ï½ì˜™å ï¿½ å ìŒ‰ë¤„ì˜™å ì™ì˜™å ìŒì‡½ì˜™å ì™ì˜™ =>");
+        printf("? ?™?˜™? ?‹¸?š¸?˜™ ? ?™?˜™æ©˜å ?‹«ï½ì˜™? ï¿? ? ?Œ‰ë¤„ì˜™? ?™?˜™? ?Œ?‡½?˜™? ?™?˜™ =>");
         scanf("%s", s->pwd);
-        printf("==> å ì™ì˜™å ì™ì˜™å ì‹¤ì–µì˜™å ì™ì˜™å ì‹¹ëŒì˜™ <== \n");
+        printf("==> ? ?™?˜™? ?™?˜™? ?‹¤?–µ?˜™? ?™?˜™? ?‹¹?Œ?˜™ <== \n");
 
         return 1;
     }
     else
     {
-        printf("\nMasterkeyå ì™ì˜™ å ì‹£ë‹™ë‹ˆëŒì˜™!!\n");
+        printf("\nMasterkey? ?™?˜™ ? ?‹£?‹™?‹ˆ?Œ?˜™!!\n");
         return 0;
     }
 }
@@ -118,12 +118,12 @@ int deletePrivacy(Privacy *s) // Delete
     int temp = checkMasterkey();
     if (temp == 1)
     {
-        s->age = -1; //å ì™ì˜™å ì‹±ê³¤ì˜™ å ì™ì˜™å ì™ì˜™å ì™ì˜™ å ì‹ ëŒì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™ å ì™ì˜™å ì™ì˜™
+        s->age = -1; //? ?™?˜™? ?‹±ê³¤ì˜™ ? ?™?˜™? ?™?˜™? ?™?˜™ ? ?‹ ?Œ?˜™ ? ?™?˜™? ?™?˜™ ? ?™?˜™? ?™?˜™ ? ?™?˜™? ?™?˜™
         return 1;
     }
     else
     {
-        printf("\nMasterkeyå ì™ì˜™ å ì‹£ë‹™ë‹ˆëŒì˜™!!\n");
+        printf("\nMasterkey? ?™?˜™ ? ?‹£?‹™?‹ˆ?Œ?˜™!!\n");
         return 0;
     }
 }
@@ -133,30 +133,30 @@ int askIndex(Privacy *s, int count)
     int answer;
 
     readPrivacy(s, count);
-    printf("å ì™ì˜™í˜¸å ì™ì˜™ (å ì™ì˜™å ï¿½ :0)? ");
+    printf("? ?™?˜™?˜¸? ?™?˜™ (? ?™?˜™? ï¿? :0)? ");
     scanf("%d", &answer);
     return answer;
 }
 
 void checkCommute(Privacy *s, int count)
 {
-    int num = 0;         //ç•°ì’—ëˆœæ´¹ï¿½ ï¿½ì†—ï¿½ì”¤
-    int flag = 0;        //æ€¨ì¢Žì‘€è¸°ëŠìƒ‡ï¿½ï¿½ï¿½ é®ê¾¨ï¿½ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì˜’ ï¿½ì—¯ï¿½ì °ï¿½ë»½ï¿½ë’—ï§žï¿½ ï¿½ì†—ï¿½ì”¤
-    int i = 0;           //è«›ì„Žë‚¬è‡¾ï¿½ è¹‚ï¿½ï¿½ë‹”
-    int tmp_special_num; //ï¿½ì—«ï¿½ë–† æ€¨ì¢Žì‘€è¸°ëŠìƒ‡
+    int num = 0;         //?•°?’—?ˆœæ´¹ï¿½ ï¿½ì†—ï¿½ì”¤
+    int flag = 0;        //??¨ì¢Ž???è¸°ëŠ?ƒ‡ï¿½ï¿½ï¿? ?®ê¾¨ï¿½ï¿½è¸°?Š?ƒ‡?‘œï¿? ï¿½ì˜’ ï¿½ì—¯ï¿½ì °ï¿½ë»½ï¿½ë’—ï§žï¿½ ï¿½ì†—ï¿½ì”¤
+    int i = 0;           //è«›ì„Ž?‚¬?‡¾ï¿? è¹‚ï¿½ï¿½ë‹”
+    int tmp_special_num; //ï¿½ì—«ï¿½ë–† ??¨ì¢Ž???è¸°ëŠ?ƒ‡
     char tmp_pwd[30];    //ï¿½ì—«ï¿½ë–† ï¿½ë™£ï¿½ë’ªï¿½ì™ï¿½ë±¶
 
-    printf("ç•°ì’“ë ï¿½ì” ï§Žï¿½ 1ï¿½ì“£ ï¿½ì—¯ï¿½ì °ï¿½ë¸¯æ€¨ï¿½ ï¿½ëˆœæ´¹ì‡±ì” ï§Žï¿½ 2ç‘œï¿½ ï¿½ì—¯ï¿½ì °ï¿½ë¹äºŒì‡±ê½­ï¿½ìŠ‚!\n");
+    printf("?•°?’“? ï¿½ì” ï§Žï¿½ 1ï¿½ì“£ ï¿½ì—¯ï¿½ì °ï¿½ë¸¯??¨ï¿½ ï¿½ëˆœæ´¹ì‡±?” ï§Žï¿½ 2?‘œï¿? ï¿½ì—¯ï¿½ì °ï¿½ë¹äºŒì‡±ê½?ï¿½ìŠ‚!\n");
     scnaf("%d", &num);
     if (!(num == 1 || num == 2))
     {
-        printf("è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì˜’ï§ï¿½ ï¿½ëŠ»ç‘œëŒë€²ï¿½ë’¿ï¿½ë•²ï¿½ë–Ž.\n");
+        printf("è¸°ëŠ?ƒ‡?‘œï¿? ï¿½ì˜’ï§ï¿½ ï¿½ëŠ»?‘œ?Œ??²ï¿½?’¿ï¿½ë•²ï¿½ë–Ž.\n");
         return;
     }
-    printf("æ€¨ì¢Žì‘€è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì—¯ï¿½ì °ï¿½ë¹äºŒì‡±ê½­ï¿½ìŠ‚!\n");
+    printf("??¨ì¢Ž???è¸°ëŠ?ƒ‡?‘œï¿? ï¿½ì—¯ï¿½ì °ï¿½ë¹äºŒì‡±ê½?ï¿½ìŠ‚!\n");
     scanf("%d", &tmp_special_num);
     getchar();
-    printf("é®ê¾¨ï¿½ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì—¯ï¿½ì °ï¿½ë¹äºŒì‡±ê½­ï¿½ìŠ‚!\n");
+    printf("?®ê¾¨ï¿½ï¿½è¸°?Š?ƒ‡?‘œï¿? ï¿½ì—¯ï¿½ì °ï¿½ë¹äºŒì‡±ê½?ï¿½ìŠ‚!\n");
     scanf("%s", tmp_pwd);
 
     for (; i < count; i++)
@@ -165,30 +165,54 @@ void checkCommute(Privacy *s, int count)
         {
             if (strcmp(s[i].pwd, tmp_pwd) == 0)
             {
-                flag = 1; //ï§¡ì– ë¸¯ï¿½ë–Žï¿½ë’— ï¿½ì“½èª˜ï¿½
+                flag = 1; //ï§¡ì– ë¸?ï¿½ë–Žï¿½ë’— ï¿½ì“½èª˜ï¿½
                 break;
             }
         }
     }
 
     if (flag == 1 && num == 1)
-    { //ï¿½ë£„ï§¡â‘¹ë–†åª›ê¾©ì“£ ï¿½ï¿½ï¿½ï¿½ì˜£ï¿½ë¸¯ï§Žï¿½ ï¿½ë§–
+    { //ï¿½ë£„ï§¡â‘¹?–†åª›ê¾©?“£ ï¿½ï¿½ï¿½ï¿½?˜£ï¿½ë¸¯ï§Žï¿½ ï¿½ë§–
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].arrive_time_hour = tm.tm_hour;
         s[i].arrive_time_min = tm.tm_min;
         s[i].arrive_time_sec = tm.tm_sec;
-        printf("ï¿½ë–†åª›ê¾©ì“£ ï¿½ê½¦æ€¨ë“­ìŸ»ï¿½ì‘æ¿¡ï¿½ ï¿½ï¿½ï¿½ï¿½ì˜£ï¿½ë¸¯ï¿½ï¿½ï¿½ï¿½ë’¿ï¿½ë•²ï¿½ë–Ž\n");
+        printf("ï¿½ë–†åª›ê¾©?“£ ï¿½ê½¦??¨ë“­?Ÿ»ï¿½ì‘æ¿¡ï¿½ ï¿½ï¿½ï¿½ï¿½?˜£ï¿½ë¸¯ï¿½ï¿½ï¿½ï¿½?’¿ï¿½ë•²ï¿½ë–Ž\n");
         return;
     }
     if (flag == 1 && num == 2)
-    { //ï¿½ë¼šï¿½ê¶ƒï¿½ë–†åª›ê¾©ì“£ ï¿½ï¿½ï¿½ï¿½ì˜£ï¿½ë¸¯ï§Žï¿½ ï¿½ë§–
+    { //ï¿½ë¼šï¿½ê¶ƒï¿½ë–†åª›ê¾©?“£ ï¿½ï¿½ï¿½ï¿½?˜£ï¿½ë¸¯ï§Žï¿½ ï¿½ë§–
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].leave_time_hour = tm.tm_hour;
         s[i].leave_time_min = tm.tm_min;
         s[i].leave_time_sec = tm.tm_sec;
-        printf("ï¿½ë–†åª›ê¾©ì“£ ï¿½ê½¦æ€¨ë“­ìŸ»ï¿½ì‘æ¿¡ï¿½ ï¿½ï¿½ï¿½ï¿½ì˜£ï¿½ë¸¯ï¿½ï¿½ï¿½ï¿½ë’¿ï¿½ë•²ï¿½ë–Ž\n");
+        printf("ï¿½ë–†åª›ê¾©?“£ ï¿½ê½¦??¨ë“­?Ÿ»ï¿½ì‘æ¿¡ï¿½ ï¿½ï¿½ï¿½ï¿½?˜£ï¿½ë¸¯ï¿½ï¿½ï¿½ï¿½?’¿ï¿½ë•²ï¿½ë–Ž\n");
         return;
     }
+}
+
+void seeTime(Privacy *s, int count)
+{
+    int scnt = 0;
+    char search[20];
+
+    printf("°Ë»öÇÒ ÀÌ¸§? ");
+    scanf("%s", search);
+    printf("*********************\n");
+    for (int i = 0; i < count; i++)
+    {
+        if (s[i].age == -1)
+            continue;
+        if (strstr(s[i].name, search))
+        {
+            printf("%2d", i + 1);
+            readScore(s[i]);
+            scnt++;
+        }
+    }
+    if (scnt == 0)
+        printf("==> °Ë»öµÈ µ¥ÀÌÅÍ ¾øÀ½");
+    printf("\n");
 }
