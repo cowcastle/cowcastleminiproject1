@@ -3,11 +3,9 @@
 int main(void)
 {
 
-    Privacy s[100];
+    Privacy s[20];
     int count = 0, menu;
     int index = 0;
-    count = loadData(s);
-    index = count;
     while (1)
     {
         menu = selectMenu();
@@ -15,22 +13,17 @@ int main(void)
             break;
         if (menu == 1)
         {
-            if(count>0){
-                readPrivacy(s, index);
-            }
-            else{
-                printf("ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤!\n");
-            }
+            readPrivacy(s, index);
         }
         else if (menu == 2)
         {
-            if (count <= 100) //íŠ¹ì •ê°œìˆ˜ë¥¼ ì´ˆê³¼í•˜ë©´ ì•ˆë¨
+            if (count <= 20) //Æ¯Á¤°³¼ö¸¦ ÃÊ°úÇÏ¸é ¾ÈµÊ
             {
-                count += addPrivacy(&s[index++]); //íŠ¹ì • ë°°ì—´ì˜ ì£¼ì†Œë¥¼ ë³´ë‚´ì£¼ê¸° ë•Œë¬¸ì— &ì„ ê¼­ ì¨ì•¼í•¨!!
+                count += addPrivacy(&s[index++]); //Æ¯Á¤ ¹è¿­ÀÇ ÁÖ¼Ò¸¦ º¸³»ÁÖ±â ¶§¹®¿¡ &À» ²À ½á¾ßÇÔ!!
             }
             else
             {
-                printf("ë” ì´ìƒ ì¶”ê°€í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
+                printf("´õ ÀÌ»ó Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
             }
         }
         else if (menu == 3)
@@ -38,11 +31,11 @@ int main(void)
             int answer = askIndex(s, index);
             if (answer != 0)
             {
-                updatePrivacy(&s[answer - 1]); // answer-1ì„ í•˜ëŠ” ì´ìœ :  indexê°€ 0ë¶€í„° ì‹œì‘í•˜ê¸° ë•Œë¬¸
+                updatePrivacy(&s[answer - 1]); // answer-1À» ÇÏ´Â ÀÌÀ¯:  index°¡ 0ºÎÅÍ ½ÃÀÛÇÏ±â ¶§¹®
             }
             else
             {
-                printf("ìˆ˜ì •í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
+                printf("¼öÁ¤ÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
             }
         }
         else if (menu == 4)
@@ -50,46 +43,42 @@ int main(void)
             int answer = askIndex(s, index);
             if (answer == 0)
             {
-                printf("=> ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+                printf("=> Ãë¼ÒµÇ¾ú½À´Ï´Ù.\n");
                 continue;
             }
             else
             {
                 int delete;
-                printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ :1)");
+                printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦ :1)");
                 scanf("%d", &delete);
                 if (delete == 1)
                 {
                     if (deletePrivacy(&s[answer - 1]))
                     {
                         count--;
-                        printf("=> ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+                        printf("=> »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
                     }
                 }
             }
         }
-        else if (menu == 5) //ì¶œí‡´ê·¼ í™•ì¸ ë©”ë‰´
+        else if (menu == 5) //ÃâÅğ±Ù ÀÔ·Â ¸Ş´º
         {
             checkCommute(s, index);
         }
-        else if (menu == 6) // íŒŒì¼ ì €ì¥ ë©”ë‰´
+        else if (menu == 6) // ÃâÅğ±Ù Á¶È¸
+        {
+            readCommute(s, index);
+        }
+        else if (menu == 7) // ÆÄÀÏ ÀúÀå ¸Ş´º
         {
             saveData(s, index);
         }
-        else if (menu == 7) // ê²€ìƒ‰ ë©”ë‰´
+        else if (menu == 8) // °Ë»ö ¸Ş´º
         {
             findPrivacy(s, index);
         }
-        if (menu == 8)//ì§€ê°ì í™•ì¸ ë©”ë‰´
-        {
-            int num = checkLate(s,index);
-            printf("ì§€ê°ì %dëª…\n",num);
-            for(int i=0; i<index; i++){
-                if(s[i].flag==1) read_OnePrivacy(s[i]);
-            }
-        }
     }
 
-    printf("\n==> ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤ <==\n");
+    printf("\n==> Á¾·áµÇ¾ú½À´Ï´Ù <==\n");
     return 0;
 }
