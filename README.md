@@ -9,16 +9,23 @@
 ![meeting-594091_1920](https://user-images.githubusercontent.com/104507267/166092647-9c2ef149-9aa5-4fab-b361-8e2dba1ce23a.jpg)
 
 + ### mini project 가 가지고 있는 대략적인 기능 설명
-  + [사람 정보 **추가**](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/addPrivacy.md)
-  + [사람 정보 **삭제**](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/deletePrivacy.md)
-  + [사람 정보 **수정**](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/updatePrivacy.md)
-  + [사람 정보 **조회**](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/readPrivacy.md)
-  + [사람 정보 **파일에 저장**](사람-정보-파일에-저장)
-  + [저장한 **파일 불러오기**](저장한-파일-불러오기)
-  + [출퇴근 **인증**](출퇴근-인증)
-  + [출퇴근 **log 확인**](출퇴근-log-확인)
-  + [**지각**한 사람 체크](지각한-사람-체크)
-
+  + 사람 정보를 **추가**하는 함수 [Link](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/addPrivacy.md)
+  + 사람 정보를 **삭제**하는 함수 [Link](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/deletePrivacy.md)
+  + 사람 정보를 **수정**하는 함수 [Link](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/updatePrivacy.md)
+  + 사람 정보를 **조회**하는 함수 [Link](https://github.com/Losecow/cowcastle.github.io/blob/main/functions/readPrivacy.md)
+  + 사람 정보를 파일에 **저장**하는 함수 [Link](사람-정보-파일에-저장)  
+    i) 사람의 정보를 파일에 저장
+  + 저장한 **파일을 불러오는** 함수 [Link](저장한-파일-불러오기)  
+    i) 사람의 개인 정보를 불러오는 함수  
+    ii) 출퇴근 기록을 불러오는 함수  
+  + 출퇴근 **인증** [Link](출퇴근-인증)  
+    i) 출근 시간을 인증하고 기록하는 함수  
+    ii) 퇴근 시간을 인증하고 기록하는 함수  
+  + 출퇴근 **log 확인** [Link](출퇴근-log-확인)  
+    i) 출근과 퇴근 기록을 불러오는 함수 
+  + **지각**한 사람 체크 [Link](지각한-사람-체크)  
+    i) 지각한 사람만 모아 체크하는 함수  
+  
 + ### 개발환경 및 언어
   +Linux, Github, MarkDown 언어, C 언어, Git 
 
