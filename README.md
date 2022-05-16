@@ -25,3 +25,8 @@
 + ### 팀소개 및 팀원이 맡은 역할
   + 팀원 빈지성 : 깃헙 관리, 프로그램 코드 개발, 출퇴근 관련 정보 수집
   + 팀원 박진우 : UI 디자인, 프로그램 코드 개발, 출퇴근 관련 정보 수집
+
++ ### 각자 구현한 함수
+  + 팀원 빈지성 : addPrivacy,readPrivacy,read_OnePrivacy,updatePrivacy,deletePrivacy
+,checkCommute,expressWrong,checkLate,askIndex,checkMasterkey
+  + 팀원 박진우 : readCommute, read_OneCommute,saveData,loadData,selectMenu,findPrivacy
