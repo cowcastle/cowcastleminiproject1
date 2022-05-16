@@ -61,8 +61,20 @@ int main(void)
                 }
             }
         }
+        else if (menu == 5) //출퇴근 확인 메뉴
+        {
+            checkCommute(s, index);
+        }
+        else if (menu == 6) // 파일 저장 메뉴
+        {
+            saveData(s, index);
+        }
+        else if (menu == 7) // 검색 메뉴
+        {
+            findPrivacy(s, index);
+        }
     }
 
-    printf("==> 종료되었습니다 <==\n");
+    printf("\n==> 종료되었습니다 <==\n");
     return 0;
 }
