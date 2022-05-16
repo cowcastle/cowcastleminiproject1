@@ -51,17 +51,11 @@
 + ### 개발일정
 |일시|개발자|개발 내용|
 |---------|---|:--:|
-|5/3-5/9|빈지성, 박진우|주제 선정,구조체,함수 선언,README.md 작성|
-|5/10-5/16|빈지성|crud 구현|
-|5/10-5/16|박진우|crud 구현 및|
-|loadData 데이터 불러오는 함수|박진우|개발완료|
-|checkCommute 출퇴근 확인 함수|빈지성|개발완료|
-|expressWrong 출퇴근 중복 체크 함수|빈지성|개발완료|
-|checkLate 지각자 체크 함수|빈지성|개발완료|
-|checkMasterKey 마스터키 체크 함수|빈지성|개발완료|
-|readCommute 출퇴근 정보 읽어오는 함수|박진우|개발완료|
-|read_Onecommute 하나의 출퇴근 정보만 불러오는 함수|박진우|개발완료|
-|findPrivacy 이름/직책으로 검색이 가능한 함수|박진우|개발완료|
+|4/26-5/2(9주차)|빈지성, 박진우|주제 선정,구조체,함수 선언,README.md 작성|
+|5/3-5/9(10주차)|빈지성,박진우|crud 구현,menu 구현|
+|5/10-5/16(11주차)|빈지성|checkCommute,expressWrong,checkLate,checkMasterKey|
+|5/10-5/16(11주차)|박진우|saveData,loadData,readCommute,read_Onecommute,findPrivacy|
+
 
 + ### 팀원 협업 평가
  + 팀원 빈지성
