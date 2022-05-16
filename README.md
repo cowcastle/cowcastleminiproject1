@@ -27,6 +27,5 @@
   + 팀원 박진우 : UI 디자인, 프로그램 코드 개발, 출퇴근 관련 정보 수집
 
 + ### 각자 구현한 함수
-  + 팀원 빈지성 : addPrivacy,readPrivacy,read_OnePrivacy,updatePrivacy,deletePrivacy
-,checkCommute,expressWrong,checkLate,askIndex,checkMasterkey
-  + 팀원 박진우 : readCommute, read_OneCommute,saveData,loadData,selectMenu,findPrivacy
+  + 팀원 빈지성 : 개인정보 CRUD 함수 구현,,checkCommute(출퇴근 확인 함수),expressWrong(출퇴근 중복 체크),checkLate(지각/결근 체크),checkMasterkey(관리자)
+  + 팀원 박진우 : readCommute,read_OneCommute(출퇴근 정보 보여줌),saveData(파일 저장),loadData(파일 읽어오기),selectMenu(메뉴),findPrivacy(검색 함수)
