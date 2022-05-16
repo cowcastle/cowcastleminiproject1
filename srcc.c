@@ -203,6 +203,10 @@ void checkCommute(Privacy *s, int count)
 
     if (flag == 1 && num == 1)
     { //도착시간을 저장하면 됨
+        if(s[i].arrive_time_hour!=0){
+            expressWrong(num);
+            return ;
+        }
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].arrive_time_hour = tm.tm_hour;
@@ -213,7 +217,10 @@ void checkCommute(Privacy *s, int count)
     }
     if (flag == 1 && num == 2)
     { //떠난시간을 저장하면 됨
-    
+        if(s[i].leave_time_hour!=0){
+            expressWrong(num);
+            return ;
+        }
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].leave_time_hour = tm.tm_hour;
