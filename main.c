@@ -88,7 +88,7 @@ int main(void)
             printf("\nNo Position Name Age  Phone_num    Speicial_num  Pwd \n");
             printf("====================================================\n");
             for(int i=0; i<index; i++){
-                if(s[i].flag==1) read_OnePrivacy(s[i]);
+                if(s[i].flag==1) read_OneCommute(s[i]);
             }
         }
 

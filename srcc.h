@@ -28,6 +28,7 @@ typedef struct
 int addPrivacy(Privacy *s);               // 1번째 사람 정보 추가하는 함수 (구현완료)
 void readPrivacy(Privacy *s, int count);  // 13번째 사람 정보 보는 함수 (구현완료)
 void readCommute(Privacy *s, int count);  // 13-1 이름 , 직위, 출퇴근시간
+void read_OneCommute(Privacy s);          // 13-2번째 한명의 기록을 볼 수 있음
 void read_OnePrivacy(Privacy s);          // 14번째 각 사람의 정보를 보는 함수 (구현완료)
 int updatePrivacy(Privacy *s);            // 3번째 사람 정보 수정하는 함수 (구현완료)
 int deletePrivacy(Privacy *s);            // 2번째 사람 정보 삭제하는 함수 (구현완료)

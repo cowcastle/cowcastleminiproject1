@@ -99,7 +99,7 @@ void readCommute(Privacy *s, int count)
         {
             if (s[i].age == -1)
                 continue;
-            printf("%s\t%s\t%d\t%d:%d:%d\t%d:%d:%d", s[i].name, s[i].position, s[i].age, s[i].arrive_time_hour, s[i].arrive_time_min, s[i].arrive_time_sec, s[i].leave_time_hour, s[i].leave_time_min, s[i].leave_time_sec);
+                read_OneCommute(s[i]);
         }
         printf("\n");
     }
@@ -107,6 +107,9 @@ void readCommute(Privacy *s, int count)
     {
         printf("\nMasterkey 가 아닙니다!!\n");
     }
+}
+void read_OneCommute(Privacy s){
+    printf("%s\t%s\t%d\t%d:%d:%d\t%d:%d:%d", s.name, s.position, s.age, s.arrive_time_hour, s.arrive_time_min, s.arrive_time_sec, s.leave_time_hour, s.leave_time_min, s.leave_time_sec);
 }
 
 void read_OnePrivacy(Privacy s)
@@ -200,10 +203,6 @@ void checkCommute(Privacy *s, int count)
 
     if (flag == 1 && num == 1)
     { //도착시간을 저장하면 됨
-        if(s[i].arrive_time_hour){
-            expressWrong(num);
-            return ;
-        }
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].arrive_time_hour = tm.tm_hour;
@@ -214,10 +213,7 @@ void checkCommute(Privacy *s, int count)
     }
     if (flag == 1 && num == 2)
     { //떠난시간을 저장하면 됨
-        if(s[i].arrive_time_hour){
-            expressWrong(num);
-            return ;
-        }
+    
         time_t t = time(NULL);
         struct tm tm = *localtime(&t);
         s[i].leave_time_hour = tm.tm_hour;
