@@ -61,15 +61,19 @@ int main(void)
                 }
             }
         }
-        else if (menu == 5) //출퇴근 확인 메뉴
+        else if (menu == 5) //출퇴근 입력 메뉴
         {
             checkCommute(s, index);
         }
-        else if (menu == 6) // 파일 저장 메뉴
+        else if (menu == 6) // 출퇴근 조회
+        {
+            readCommute(s, index);
+        }
+        else if (menu == 7) // 파일 저장 메뉴
         {
             saveData(s, index);
         }
-        else if (menu == 7) // 검색 메뉴
+        else if (menu == 8) // 검색 메뉴
         {
             findPrivacy(s, index);
         }

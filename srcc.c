@@ -26,9 +26,10 @@ int selectMenu()
     printf("2. 인원 추가 \n");
     printf("3. 인원 수정 \n");
     printf("4. 인원 삭제 \n");
-    printf("5. 출퇴근 확인 \n");
-    printf("6. 인원 정보 저장 \n");
-    printf("7. 인원 정보 검색 \n");
+    printf("5. 출퇴근 입력 \n");
+    printf("6. 출퇴근 조회 \n");
+    printf("7. 인원 정보 저장 \n");
+    printf("8. 인원 정보 검색 \n");
     printf("0. 종료 \n\n");
     printf("=> 메뉴를 선택해주세요. ");
     scanf("%d", &menu);
@@ -85,6 +86,28 @@ void readPrivacy(Privacy *s, int count)
         printf("\nMasterkey 가 아닙니다!!\n");
     }
 }
+
+void readCommute(Privacy *s, int count)
+{
+    int temp = checkMasterkey();
+    if (temp == 1)
+    {
+        printf("이름\t직책\t나이\t출근시간\t퇴근시간\n");
+        printf("===============================================\n");
+        for (int i = 0; i < count; i++)
+        {
+            if (s[i].age == -1)
+                continue;
+            printf("%s\t%s\t%d\t%d:%d:%d\t\t%d:%d:%d", s[i].name, s[i].position, s[i].age, s[i].arrive_time_hour, s[i].arrive_time_min, s[i].arrive_time_sec, s[i].leave_time_hour, s[i].leave_time_min, s[i].leave_time_sec);
+        }
+        printf("\n");
+    }
+    else
+    {
+        printf("\nMasterkey 가 아닙니다!!\n");
+    }
+}
+
 void read_OnePrivacy(Privacy s)
 {
     printf("%4s %6s %4d %10s %8d %10s\n", s.position, s.name, s.age, s.phone_num, s.special_num, s.pwd);
