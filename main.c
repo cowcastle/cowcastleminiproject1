@@ -6,6 +6,10 @@ int main(void)
     Privacy s[20];
     int count = 0, menu;
     int index = 0;
+
+    count = loadData(s);
+    index = count;
+
     while (1)
     {
         menu = selectMenu();

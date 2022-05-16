@@ -1,6 +1,6 @@
 #include "srcc.h"
 
-char masterkey[30] = {"1234 abcd!"};
+char masterkey[30] = {"12345"};
 
 int checkMasterkey()
 {
@@ -28,7 +28,7 @@ int selectMenu()
     printf("4. 인원 삭제 \n");
     printf("5. 출퇴근 입력 \n");
     printf("6. 출퇴근 조회 \n");
-    printf("7. 인원 정보 저장 \n");
+    printf("7. 출퇴근  정보 저장 \n");
     printf("8. 인원 정보 검색 \n");
     printf("0. 종료 \n\n");
     printf("=> 메뉴를 선택해주세요. ");
@@ -98,7 +98,7 @@ void readCommute(Privacy *s, int count)
         {
             if (s[i].age == -1)
                 continue;
-            printf("%s\t%s\t%d\t%d:%d:%d\t\t%d:%d:%d", s[i].name, s[i].position, s[i].age, s[i].arrive_time_hour, s[i].arrive_time_min, s[i].arrive_time_sec, s[i].leave_time_hour, s[i].leave_time_min, s[i].leave_time_sec);
+            printf("%s\t%s\t%d\t%d:%d:%d\t%d:%d:%d", s[i].name, s[i].position, s[i].age, s[i].arrive_time_hour, s[i].arrive_time_min, s[i].arrive_time_sec, s[i].leave_time_hour, s[i].leave_time_min, s[i].leave_time_sec);
         }
         printf("\n");
     }
@@ -224,7 +224,6 @@ void saveData(Privacy *s, int count)
     FILE *file;
     file = fopen("log.txt", "wt");
 
-    fprintf(file, "이름\t직책\t나이\t출근시간\t퇴근시간\n");
     for (int i = 0; i < count; i++)
     {
         if (s[i].age == -1)
@@ -238,6 +237,7 @@ void saveData(Privacy *s, int count)
 int loadData(Privacy *s)
 {
     int count = 0;
+    int i = 0;
     FILE *file;
     file = fopen("log.txt", "rt");
     if (file == NULL)
@@ -247,24 +247,26 @@ int loadData(Privacy *s)
     }
     else
     {
-        fscanf(file, "이름\t직책\t나이\t출근시간\t퇴근시간\n");
-        while (!feof(file))
+        for (; i < 100; i++)
         {
             if (s[count].age == -1)
                 continue;
-            int num = fscanf(file, "%s\t%s\t%d\t%d %d %d\t%d %d %d", s[count].name, s[count].position, &s[count].age, &s[count].arrive_time_hour, &s[count].arrive_time_min, &s[count].arrive_time_sec, &s[count].leave_time_hour, &s[count].leave_time_min, &s[count].leave_time_sec);
-            if (num != 9)
+            fscanf(file, "%s\t%s\t%d\t\t%d %d %d\t%d %d %d", s[i].name, s[i].position, &s[i].age, &s[i].arrive_time_hour, &s[i].arrive_time_min, &s[i].arrive_time_sec, &s[i].leave_time_hour, &s[i].leave_time_min, &s[i].leave_time_sec);
+            if (feof(file))
                 break;
-            count++;
         }
     }
+    if (file == NULL)
+    {
+        printf("\n=> 파일 없음\n");
+        i = 0;
+    }
+    else if (file != NULL)
+    {
+        printf("\n=> 로딩 성공!\n");
+    }
     fclose(file);
-
-    if (count > 0)
-        printf("\n==> 로딩에 성공하였습니다 <==\n");
-    else
-        printf("\n==> 파일이 존재하지 않습니다 <==\n");
-    return count;
+    return i;
 }
 
 void findPrivacy(Privacy *s, int count)
