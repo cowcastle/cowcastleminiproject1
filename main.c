@@ -21,13 +21,13 @@ int main(void)
         }
         else if (menu == 2)
         {
-            if (count <= 20) //Æ¯Á¤°³¼ö¸¦ ÃÊ°úÇÏ¸é ¾ÈµÊ
+            if (count <= 20) //íŠ¹ì •ê°œìˆ˜ë¥¼ ì´ˆê³¼í•˜ë©´ ì•ˆë¨
             {
-                count += addPrivacy(&s[index++]); //Æ¯Á¤ ¹è¿­ÀÇ ÁÖ¼Ò¸¦ º¸³»ÁÖ±â ¶§¹®¿¡ &À» ²À ½á¾ßÇÔ!!
+                count += addPrivacy(&s[index++]); //íŠ¹ì • ë°°ì—´ì˜ ì£¼ì†Œë¥¼ ë³´ë‚´ì£¼ê¸° ë•Œë¬¸ì— &ì„ ê¼­ ì¨ì•¼í•¨!!
             }
             else
             {
-                printf("´õ ÀÌ»ó Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
+                printf("ë” ì´ìƒ ì¶”ê°€í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
             }
         }
         else if (menu == 3)
@@ -35,11 +35,11 @@ int main(void)
             int answer = askIndex(s, index);
             if (answer != 0)
             {
-                updatePrivacy(&s[answer - 1]); // answer-1À» ÇÏ´Â ÀÌÀ¯:  index°¡ 0ºÎÅÍ ½ÃÀÛÇÏ±â ¶§¹®
+                updatePrivacy(&s[answer - 1]); // answer-1ì„ í•˜ëŠ” ì´ìœ :  indexê°€ 0ë¶€í„° ì‹œì‘í•˜ê¸° ë•Œë¬¸
             }
             else
             {
-                printf("¼öÁ¤ÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
+                printf("ìˆ˜ì •í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
             }
         }
         else if (menu == 4)
@@ -47,42 +47,42 @@ int main(void)
             int answer = askIndex(s, index);
             if (answer == 0)
             {
-                printf("=> Ãë¼ÒµÇ¾ú½À´Ï´Ù.\n");
+                printf("=> ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
                 continue;
             }
             else
             {
                 int delete;
-                printf("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(»èÁ¦ :1)");
+                printf("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(ì‚­ì œ :1)");
                 scanf("%d", &delete);
                 if (delete == 1)
                 {
                     if (deletePrivacy(&s[answer - 1]))
                     {
                         count--;
-                        printf("=> »èÁ¦µÇ¾ú½À´Ï´Ù.\n");
+                        printf("=> ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.\n");
                     }
                 }
             }
         }
-        else if (menu == 5) //ÃâÅğ±Ù ÀÔ·Â ¸Ş´º
+        else if (menu == 5) //ì¶œí‡´ê·¼ ì…ë ¥ ë©”ë‰´
         {
             checkCommute(s, index);
         }
-        else if (menu == 6) // ÃâÅğ±Ù Á¶È¸
+        else if (menu == 6) // ì¶œí‡´ê·¼ ì¡°íšŒ
         {
             readCommute(s, index);
         }
-        else if (menu == 7) // ÆÄÀÏ ÀúÀå ¸Ş´º
+        else if (menu == 7) // íŒŒì¼ ì €ì¥ ë©”ë‰´
         {
             saveData(s, index);
         }
-        else if (menu == 8) // °Ë»ö ¸Ş´º
+        else if (menu == 8) // ê²€ìƒ‰ ë©”ë‰´
         {
             findPrivacy(s, index);
         }
     }
 
-    printf("\n==> Á¾·áµÇ¾ú½À´Ï´Ù <==\n");
+    printf("\n==> ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤ <==\n");
     return 0;
 }
