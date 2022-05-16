@@ -54,7 +54,7 @@
 |4/26-5/2(9주차)|빈지성, 박진우|주제 선정,구조체,함수 선언,README.md 작성|
 |5/3-5/9(10주차)|빈지성,박진우|crud 구현,menu 구현|
 |5/10-5/16(11주차)|빈지성|checkCommute,expressWrong,checkLate,checkMasterKey 함수 구현|
-|5/10-5/16(11주차)|박진우|saveData,loadData,readCommute,read_Onecommute,findPrivacy 함수 |
+|5/10-5/16(11주차)|박진우|saveData,loadData,readCommute,read_Onecommute,findPrivacy 함수 구현|
 
 
 + ### 팀원 협업 평가
