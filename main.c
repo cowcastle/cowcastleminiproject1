@@ -6,9 +6,6 @@ int main(void)
     Privacy s[SIZE];
     int count = 0, menu;
     int index = 0;
-
-    count = loadData(s);
-    index = count;
     
     for(int i=0; i<SIZE; i++){
         s[i].arrive_time_hour=0;
@@ -18,6 +15,9 @@ int main(void)
         s[i].leave_time_min=0;
         s[i].leave_time_sec=0;
     }
+    count = loadData(s);
+    index = count;
+    
     while (1)
     {
         menu = selectMenu();
