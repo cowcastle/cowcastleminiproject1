@@ -30,6 +30,7 @@ int selectMenu()
     printf("6. 출퇴근 조회 \n");
     printf("7. 출퇴근  정보 저장 \n");
     printf("8. 인원 정보 검색 \n");
+    printf("9. 지각자 확인 \n");
     printf("0. 종료 \n\n");
     printf("=> 메뉴를 선택해주세요. ");
     scanf("%d", &menu);
@@ -331,4 +332,39 @@ void findPrivacy(Privacy *s, int count)
     {
         printf("\nMasterkey가 아닙니다!!\n");
     }
+}
+int checkLate(Privacy *s,int count){
+    
+    int num=0;
+
+    for(int i=0; i<count; i++){
+        s[i].fixed_time_hour =9;//9시를 정해진 출근시간이라고 생각
+        s[i].fixed_time_min =0;
+        s[i].fixed_time_sec =0;
+    }
+    for(int i=0; i<count; i++){
+        if(s[i].age<0) continue;
+        else{
+            if(s[i].arrive_time_hour>s[i].fixed_time_hour){
+                s[i].flag=1;//지각이라는 표시
+                num++;
+            }
+            else if(s[i].arrive_time_hour==s[i].fixed_time_hour){
+                if(s[i].arrive_time_min>s[i].fixed_time_min){
+                    s[i].flag=1;//지각이라는 표시
+                    num++;
+                }
+            }
+            else if(s[i].arrive_time_hour==s[i].fixed_time_hour){
+                if(s[i].arrive_time_min==s[i].fixed_time_min){
+                    if(s[i].arrive_time_sec>s[i].fixed_time_sec){
+                        s[i].flag=1;//지각이라는 표시
+                        num++;
+                    }
+                }
+            }
+        }
+    }
+    
+    return num;
 }

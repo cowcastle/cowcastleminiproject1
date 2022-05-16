@@ -81,6 +81,17 @@ int main(void)
         {
             findPrivacy(s, index);
         }
+        if (menu == 9)//지각자 확인 메뉴
+        {
+            int num = checkLate(s,index);
+            printf("지각자 %d명\n",num);
+            printf("\nNo Position Name Age  Phone_num    Speicial_num  Pwd \n");
+            printf("====================================================\n");
+            for(int i=0; i<index; i++){
+                if(s[i].flag==1) read_OnePrivacy(s[i]);
+            }
+        }
+
     }
 
     printf("\n==> 종료되었습니다 <==\n");
