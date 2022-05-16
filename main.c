@@ -3,9 +3,11 @@
 int main(void)
 {
 
-    Privacy s[20];
+    Privacy s[100];
     int count = 0, menu;
     int index = 0;
+    count = loadData(s);
+    index = count;
     while (1)
     {
         menu = selectMenu();
@@ -13,11 +15,16 @@ int main(void)
             break;
         if (menu == 1)
         {
-            readPrivacy(s, index);
+            if(count>0){
+                readPrivacy(s, index);
+            }
+            else{
+                printf("데이터가 없습니다!\n");
+            }
         }
         else if (menu == 2)
         {
-            if (count <= 20) //특정개수를 초과하면 안됨
+            if (count <= 100) //특정개수를 초과하면 안됨
             {
                 count += addPrivacy(&s[index++]); //특정 배열의 주소를 보내주기 때문에 &을 꼭 써야함!!
             }
@@ -73,7 +80,7 @@ int main(void)
         {
             findPrivacy(s, index);
         }
-        if (menu == 8)
+        if (menu == 8)//지각자 확인 메뉴
         {
             int num = checkLate(s,index);
             printf("지각자 %d명\n",num);
