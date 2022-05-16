@@ -93,9 +93,9 @@ int main(void)
         {
             int num = checkLate(s,index);
             printf("지각자/결석자 %d명\n",num);
-            printf("\n1. 지각자\n");
             printf("\nNo Position Name Age  Phone_num    Speicial_num  Pwd \n");
             printf("====================================================\n");
+            printf("\n1. 지각자\n");
             for(int i=0; i<index; i++){
                 if(s[i].flag==1) read_OneCommute(s[i]);
             }

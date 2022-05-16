@@ -109,7 +109,7 @@ void readCommute(Privacy *s, int count)
     }
 }
 void read_OneCommute(Privacy s){
-    printf("%s\t%s\t%d\t%d:%d:%d\t%d:%d:%d", s.name, s.position, s.age, s.arrive_time_hour, s.arrive_time_min, s.arrive_time_sec, s.leave_time_hour, s.leave_time_min, s.leave_time_sec);
+    printf("%s\t%s\t%d\t%d:%d:%d\t%d:%d:%d\n", s.name, s.position, s.age, s.arrive_time_hour, s.arrive_time_min, s.arrive_time_sec, s.leave_time_hour, s.leave_time_min, s.leave_time_sec);
 }
 
 void read_OnePrivacy(Privacy s)
@@ -355,6 +355,9 @@ int checkLate(Privacy *s,int count){
     }
     for(int i=0; i<count; i++){
         if(s[i].age<0) continue;
+        if(s[i].arrive_time_hour==0&&s[i].arrive_time_min==0&&s[i].arrive_time_hour==0){
+            s[i].flag=2;
+        }
         else{
             if(s[i].arrive_time_hour>s[i].fixed_time_hour){
                 s[i].flag=1;//지각이라는 표시
