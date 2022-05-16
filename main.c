@@ -93,13 +93,13 @@ int main(void)
         {
             int num = checkLate(s,index);
             printf("지각자/결석자 %d명\n",num);
-            printf("1. 지각자\n");
+            printf("\n1. 지각자\n");
             printf("\nNo Position Name Age  Phone_num    Speicial_num  Pwd \n");
             printf("====================================================\n");
             for(int i=0; i<index; i++){
                 if(s[i].flag==1) read_OneCommute(s[i]);
             }
-            printf("2. 결석자\n");
+            printf("\n2. 결석자\n");
             for(int i=0; i<index; i++){
                 if(s[i].flag==2) read_OneCommute(s[i]);
             }
