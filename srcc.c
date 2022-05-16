@@ -29,6 +29,7 @@ int selectMenu()
     printf("5. 출퇴근 확인 \n");
     printf("6. 인원 정보 저장 \n");
     printf("7. 인원 정보 검색 \n");
+    printf("8. 지각자 확인 \n");
     printf("0. 종료 \n\n");
     printf("=> 메뉴를 선택해주세요. ");
     scanf("%d", &menu);
