@@ -35,8 +35,8 @@ int loadData(Privacy *s);                 // 5번째 파일에 있는 데이터�
 int selectMenu();                         // 6번째 출근 관련 전체메뉴 (구현완료)
 void checkCommute(Privacy *s, int count); // 7번째 출퇴근 인증하는 함수 (구현완료)
 // void seeTime(Privacy *s);                 // 8번째 출퇴근 기록보는 함수 -> findPrivacy로 합쳐짐
-void expressWrong(Privacy *s);           // 9번째 출근하고 퇴근 잘못 찍었을 때 표현해주는 함수
-int checkLate(Privacy *s,int count);               // 10번째 지각한 사람 체크 함수
-int askIndex(Privacy *s, int count);     // 12번째 사람을 선택하는 함수
+void expressWrong(int num);           // 9번째 출근하고 퇴근 잘못 찍었을 때 표현해주는 함수(구현완료)
+int checkLate(Privacy *s,int count);               // 10번째 지각한 사람 체크 함수(구현완료)
+int askIndex(Privacy *s, int count);     // 12번째 사람을 선택하는 함수(구현완료)
 void findPrivacy(Privacy *s, int count); // 8번째 함수 : 사람 정보 검색 함수 + 출퇴근 log 관리 (이름/직책으로 검색) (구현완료)
 int checkMasterkey();                    // 15번째 사람의 정보 추가,삭제,수정,읽는 것을 암호가 맞을 때 실행을 할건데 그 암호를 설정하는 것 (구현완료)

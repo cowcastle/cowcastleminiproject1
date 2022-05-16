@@ -78,7 +78,7 @@ int main(void)
             int num = checkLate(s,index);
             printf("지각자 %d명\n",num);
             for(int i=0; i<index; i++){
-                if(flag==1) read_OnePrivacy();
+                if(s[i].flag==1) read_OnePrivacy(s[i]);
             }
         }
     }
